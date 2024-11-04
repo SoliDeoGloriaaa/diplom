@@ -51,11 +51,6 @@
     {% include 'includes/header.html' %}
     <main> 
       <div class="container py-5"> 
-        {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-danger">{{ message }}</div>
-        {% endfor %}
-        {% endif %}
         {% block content %}
           Контент не подвезли
         {% endblock %}
