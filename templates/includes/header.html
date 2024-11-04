@@ -1,0 +1,31 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-light" style="background-color: #413D4C;">
+    <div class="container">
+
+      <a class="btn btn-one" href="{% url 'main:index'%}"><span style="color:white">
+        <img src="{% static 'img/logo.png' %}" width="30" height="30">
+        Urban
+      </span>
+      </a>
+
+      <ul class="nav nav-pills">
+          {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="btn btn-one" href="{% url 'users:logout' %}">
+                      <span style="color:white">Выйти</span></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="btn btn-one" href="{% url 'users:login' %}">
+                      <span style="color:white">Войти</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-one" href="{% url 'users:signup' %}">
+                      <span style="color:white">Регистрация</span></a>
+                </li>
+          {% endif %}
+      </ul>
+    </div>
+  </nav>
+</header>
